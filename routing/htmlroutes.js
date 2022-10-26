@@ -1,10 +1,9 @@
-//BRIDGE
-//ASSIGN URL END POINTS THAT WILL RENDER APPROPRIATE HTML FILE
-//router instance create .router w/ express and creates endpoint 
+//HTML BRIDGE
+//Router object created to hand request
 const router = require("express").Router()
 const path = require("path")
 
-//routershell..response
+//Routershell / response
 router.get("/notes",(req,res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"))
 })
