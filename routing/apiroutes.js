@@ -1,11 +1,12 @@
-//ACTS AS BRIDGE BETWEEN DB AND SERVER 
-//PASSING DATA BETWEEN DB.JSON AND FRONT END
+//BRIDGE BETWEEN DB.JSON AND SERVER 
+//DATA BETWEEN DB.JSON AND FRONT END
 //ACTIONS BASED ON FETCH ROUTES IN INDEX.JS
-
 const router = require("express").Router()
 //read & write file
 const fs = require("fs")
 let data = require("../db/db.json")
+const generateUniqueId = require('generate-unique-id');
+
 //routershell..response
 router.get("/notes",(req,res) => {
     data = JSON.parse(fs.readFileSync("./db/db.json","utf-8"))
@@ -16,7 +17,7 @@ router.post("/notes", (req,res) => {
     let note = {
         title: req.body.title,
         text: req.body.text,
-        id: Math.floor(Math.random() *1000)
+        id: generateUniqueId()
     }
     data.push(note)
     fs.writeFileSync("./db/db.json",JSON.stringify(data))

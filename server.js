@@ -19,6 +19,3 @@ console.log(`Example app listening at http://localhost:${PORT}`)
 );
 
 
-// GET NOTES AND INDEX. HTML
-//UNIQUE ID FOR EACH NOTE .. NPM PACKAGES
-//BONUS: DELETE API RECEIVVE A QUERY PARAM WITH ID OF NOTE TO DELETE
