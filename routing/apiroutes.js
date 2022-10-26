@@ -22,7 +22,17 @@ router.post("/notes", (req,res) => {
     data.push(note)
     fs.writeFileSync("./db/db.json",JSON.stringify(data))
     res.json(data)
-})
+});
 
-//REQ PARAMS ID - DELETE ...FIND THE ID PULL THE REST OF OBJECTS FRFOM IT AND RERENDER //ARRAY OF CLOTHES TO KEEP ..FILTER
+  // Delete function
+router.delete('/api/notes/:id', (req, res) => {
+    let db = JSON.parse(fs.readFileSync('db/db.json'))
+    // removing note with id
+    let deleteNote = db.filter(item => item.id !== req.params.id);
+    // Saves notes rewritten into db.json
+    fs.writeFileSync('db/db.json', JSON.stringify(deleteNote));
+    res.json(deleteNote);
+    })
+
+
 module.exports = router
