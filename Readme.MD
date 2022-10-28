@@ -35,6 +35,8 @@ This is a great tool to maintain organization, time management, and much more.
 
   For any questions please email me at: evince.edouard@gmail.com
   or Visit my Github at: http://github.com/EEdouard28
+  
+  Visit the app here: https://young-journey-35528.herokuapp.com/
 
   ### License
 
